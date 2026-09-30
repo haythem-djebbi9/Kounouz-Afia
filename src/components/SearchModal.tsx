@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Product } from '../types';
 import { PRODUCTS } from '../data/mockData';
 import { Search, X, ArrowLeft, Droplets, Tag } from 'lucide-react';
-import { formatPrice } from '../utils/currency';
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -104,7 +103,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                       {product.name}
                     </h4>
                     <span className="text-[11px] text-[#6F827B]">
-                      {product.subtitle} • {formatPrice(product.price)}
+                      {product.subtitle} • {product.price} ر.س
                     </span>
                   </div>
                 </div>

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { X, User, Package, MapPin, Heart, LogOut, CheckCircle2, ShieldCheck } from 'lucide-react';
-import { formatPrice } from '../utils/currency';
 
 interface AccountModalProps {
   isOpen: boolean;
@@ -17,7 +16,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose }) =
       id: 'KZ-2025-9481',
       date: '14 مايو 2025',
       items: 'عسل طبيعي فاخر 500g (×2)، أعواد العافية (×1)',
-      total: formatPrice(415),
+      total: '415 ر.س',
       status: 'تم التوصيل',
       batchVerified: 'KZ-LUX-500',
     },
@@ -25,7 +24,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({ isOpen, onClose }) =
       id: 'KZ-2025-8312',
       date: '02 أبريل 2025',
       items: 'باكج العافية للإهداء (×1)',
-      total: formatPrice(380),
+      total: '380 ر.س',
       status: 'تم التوصيل',
       batchVerified: 'KZ-BOX-2025',
     }

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Product } from '../types';
 import { ChevronRight, ChevronLeft, ArrowLeft, Eye, ShoppingCart } from 'lucide-react';
-import { formatPrice } from '../utils/currency';
 
 interface DiscoverTreasuresProps {
   products: Product[];
@@ -129,7 +128,7 @@ export const DiscoverTreasures: React.FC<DiscoverTreasuresProps> = ({
 
                     {/* Price Tag Pill */}
                     <div className="absolute bottom-2 left-2 bg-[#0C261B]/90 backdrop-blur-sm text-[#FAF6EE] text-xs font-bold px-2.5 py-1 rounded-md border border-[#D49B37]/40">
-                      {formatPrice(product.price)}
+                      {product.price} ر.س
                     </div>
                   </div>
 

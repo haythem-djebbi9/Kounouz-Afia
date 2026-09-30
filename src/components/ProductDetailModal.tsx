@@ -13,7 +13,6 @@ import {
   Sparkles
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { formatPrice } from '../utils/currency';
 
 interface ProductDetailModalProps {
   product: Product | null;
@@ -111,11 +110,11 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {/* Price */}
                 <div className="flex items-baseline gap-3 mb-4">
                   <span className="text-2xl font-black text-[#0C261B]">
-                    {formatPrice(product.price)}
+                    {product.price} ر.س
                   </span>
                   {product.oldPrice && (
                     <span className="text-sm font-semibold text-[#A0AFA9] line-through">
-                      {formatPrice(product.oldPrice)}
+                      {product.oldPrice} ر.س
                     </span>
                   )}
                 </div>
@@ -238,7 +237,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             ) : (
               <>
                 <ShoppingCart className="w-4 h-4 text-[#D49B37]" />
-                <span>إضافة إلى السلة • {formatPrice(product.price * quantity)}</span>
+                <span>إضافة إلى السلة • {(product.price * quantity)} ر.س</span>
               </>
             )}
           </button>

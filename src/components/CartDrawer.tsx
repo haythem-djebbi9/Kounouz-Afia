@@ -11,7 +11,6 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { formatPrice } from '../utils/currency';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -150,7 +149,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold text-[#0C261B]">
-                        {formatPrice(item.product.price * item.quantity)}
+                        {item.product.price * item.quantity} ر.س
                       </span>
 
                       {/* Quantity Modifier */}
@@ -188,17 +187,17 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
               <div className="space-y-1.5 text-xs">
                 <div className="flex justify-between text-[#6F827B]">
                   <span>المجموع الفرعي:</span>
-                  <span className="font-mono font-bold text-[#0C261B]">{formatPrice(subtotal)}</span>
+                  <span className="font-mono font-bold text-[#0C261B]">{subtotal} ر.س</span>
                 </div>
                 <div className="flex justify-between text-[#6F827B]">
                   <span>التوصيل السريع:</span>
                   <span className="font-mono font-bold text-[#0C261B]">
-                    {shipping === 0 ? 'مجاناً' : formatPrice(shipping)}
+                    {shipping === 0 ? 'مجاناً' : `${shipping} ر.س`}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm font-extrabold text-[#0C261B] pt-2 border-t border-[#F2EAE0]">
                   <span>الإجمالي:</span>
-                  <span className="font-mono text-base text-[#C68A28]">{formatPrice(total)}</span>
+                  <span className="font-mono text-base text-[#C68A28]">{total} ر.س</span>
                 </div>
               </div>
 
