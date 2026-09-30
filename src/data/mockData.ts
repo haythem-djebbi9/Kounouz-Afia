@@ -366,7 +366,7 @@ export const ARTICLES: Article[] = [
     id: 'art-1',
     title: 'فوائد العسل الطبيعي للجسم والمناعة',
     date: '20 يوليو 2025',
-    image: '/images/honey-pour.jpg',
+    image: '/images/3sal.jpg',
     readTime: '4 دقائق قراءة',
     snippet: 'اكتشف كيف يمكن لملعقة واحدة من العسل الطبيعي يومياً أن تحدث فارقاً كبيراً في تعزيز مناعتك ومستويات طاقتك الحيوية.',
     category: 'صحة ومناعة'
@@ -375,7 +375,7 @@ export const ARTICLES: Article[] = [
     id: 'art-2',
     title: 'كيف نميز العسل الطبيعي من المغشوش؟',
     date: '12 يوليو 2025',
-    image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=600&q=80',
+    image: '/images/klalatus.jpg.jpeg',
     readTime: '6 دقائق قراءة',
     snippet: 'دليلك الشامل لمعرفة الطرق العلمية والمخبرية للكشف عن نقاء العسل والابتعاد عن الطرق الشائعة الخاطئة.',
     category: 'ثقافة الجودة'
@@ -384,7 +384,7 @@ export const ARTICLES: Article[] = [
     id: 'art-3',
     title: 'وصفات طبيعية لتعزيز نشاطك اليومي',
     date: '05 يوليو 2025',
-    image: 'https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=600&q=80',
+    image: '/images/jarjir.jpg.jpeg',
     readTime: '3 دقائق قراءة',
     snippet: 'أفضل الخلطات الطبيعية بمزج العسل النقي مع الليمون والزنجبيل وحبوب اللقاح ليوم مفعم بالحيوية والتركيز.',
     category: 'وصفات صحية'
@@ -393,7 +393,7 @@ export const ARTICLES: Article[] = [
     id: 'art-4',
     title: 'ما الذي يجعل عسلنا مميزاً؟',
     date: '18 يونيو 2025',
-    image: 'https://images.unsplash.com/photo-1587049352851-8d4e89133924?auto=format&fit=crop&w=600&q=80',
+    image: '/images/beekeeper.jpg',
     readTime: '5 دقائق قراءة',
     snippet: 'من اختيار مواقع المناحل في المحميات الطبيعية البعيدة عن التلوث إلى أحدث تقنيات الفحص المخبري الدقيق.',
     category: 'قصتنا'
@@ -402,7 +402,7 @@ export const ARTICLES: Article[] = [
     id: 'art-5',
     title: 'رحلتنا من الخلية إلى العبوة',
     date: '10 يونيو 2025',
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80',
+    image: '/images/beekeeperZZZ.jpg',
     readTime: '4 دقائق قراءة',
     snippet: 'تعرف على الخطوات الدقيقة التي نتبعها في جني العسل وتعبئته بارداً بدون أي تعريض للحرارة لحفظ الإنزيمات.',
     category: 'الإنتاج'
@@ -411,7 +411,7 @@ export const ARTICLES: Article[] = [
     id: 'art-6',
     title: 'كيف نتحقق من جودة كل دفعة لدينا؟',
     date: '01 يونيو 2025',
-    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=600&q=80',
+    image: '/images/propolis.jpg.jpeg',
     readTime: '5 دقائق قراءة',
     snippet: 'نظرة داخل مختبراتنا المعتمدة، وكيف نقوم بإصدار رمز QR خاص بكل عبوة يحتوي على شهادة الفحص الكاملة.',
     category: 'الشفافية'

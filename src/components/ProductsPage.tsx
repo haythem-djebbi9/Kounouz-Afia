@@ -28,7 +28,6 @@ import {
   QrCode,
   Award
 } from 'lucide-react';
-import { formatPrice } from '../utils/currency';
 
 interface ProductsPageProps {
   onSelectProduct: (product: Product) => void;
@@ -530,11 +529,11 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                         {/* Price Section */}
                         <div className="flex items-baseline gap-2 mb-4">
                           <span className="text-lg sm:text-xl font-extrabold text-[#0C261B]">
-                            {formatPrice(product.price)}
+                            {product.price} ريال
                           </span>
                           {product.oldPrice && (
                             <span className="text-xs text-[#8C9E97] line-through font-medium">
-                              {formatPrice(product.oldPrice)}
+                              {product.oldPrice} ريال
                             </span>
                           )}
                         </div>
@@ -614,7 +613,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               <Truck className="w-6 h-6" />
             </div>
             <h4 className="text-sm font-bold text-[#0C261B] mb-1">شحن سريع ومجاني</h4>
-            <p className="text-xs text-[#6F827B]">للطلبات فوق 200 د.ت لجميع المدن</p>
+            <p className="text-xs text-[#6F827B]">للطلبات فوق 200 ريال لجميع المدن</p>
           </div>
 
           <div className="flex flex-col items-center p-3">
@@ -859,7 +858,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
             <div className="md:col-span-5 lg:col-span-4 flex justify-center md:justify-end">
               <div className="relative w-full max-w-sm sm:max-w-xs md:max-w-full aspect-[4/3] sm:aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#D49B37] bg-white">
                 <img
-                  src="/images/honey-pour.jpg"
+                  src="/images/3sal.jpg"
                   alt="عسل طبيعي نقي"
                   className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
                   loading="eager"
