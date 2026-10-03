@@ -215,7 +215,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               {/* Grand Title */}
               <div className="space-y-2">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0C261B] tracking-tight leading-tight">
-                  متجر كنوز النقاء والعافية
+                  متجر كنوز العافية
                 </h1>
                 <p className="text-base sm:text-lg text-[#576B64] font-medium leading-relaxed max-w-2xl">
                   مجموعتنا المختارة من أرقى أنواع العسل الجبلي الخام، غذاء الملكات، البروبوليس، وأعواد الطاقة مع شهادة فحص مخبري موثقة لكل عبوة.

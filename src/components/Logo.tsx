@@ -36,7 +36,7 @@ export const Logo: React.FC<LogoProps> = ({
             className={`object-contain transition-all duration-200 ${
               compact
                 ? 'h-12 w-12'
-                : 'h-16 w-16 sm:h-20 sm:w-20 lg:h-[90px] lg:w-[90px]'
+                : 'h-[76px] w-[76px] sm:h-24 sm:w-24 lg:h-[116px] lg:w-[116px]'
             }`}
           />
         ) : (
@@ -44,7 +44,7 @@ export const Logo: React.FC<LogoProps> = ({
             className={`relative flex items-center justify-center ${
               compact
                 ? 'w-12 h-12'
-                : 'w-16 h-16 sm:w-20 sm:h-20 lg:w-[90px] lg:h-[90px]'
+                : 'w-[76px] h-[76px] sm:w-24 sm:h-24 lg:w-[116px] lg:h-[116px]'
             }`}
           >
             <svg
@@ -81,16 +81,11 @@ export const Logo: React.FC<LogoProps> = ({
           className={`font-['Cairo'] font-bold tracking-tight ${titleColor} ${
             compact
               ? 'text-lg sm:text-xl'
-              : 'text-2xl sm:text-[28px] lg:text-[32px] mb-1.5'
+              : 'text-2xl sm:text-[30px] lg:text-[36px]'
           }`}
         >
           كنوز العافية
         </span>
-        <div className="flex items-center gap-1.5 text-[#D19A44] font-['Cairo'] font-semibold text-xs sm:text-sm lg:text-[15px] whitespace-nowrap">
-          <span className="w-3.5 sm:w-6 h-[2px] bg-[#D19A44] inline-block rounded-full"></span>
-          <span>جودة يمكن التحقق منها</span>
-          <span className="w-3.5 sm:w-6 h-[2px] bg-[#D19A44] inline-block rounded-full"></span>
-        </div>
       </div>
     </div>
   );

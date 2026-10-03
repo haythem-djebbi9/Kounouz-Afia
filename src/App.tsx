@@ -27,9 +27,9 @@ import { ProductsPage } from './components/ProductsPage';
 import { StoryPage } from './components/StoryPage';
 import { VerificationPage } from './components/VerificationPage';
 import { ContactPage } from './components/ContactModal';
+import { ProductDetailPage } from './components/ProductDetailPage';
 
 // Modals & Drawers
-import { ProductDetailModal } from './components/ProductDetailModal';
 import { VerificationModal } from './components/VerificationModal';
 import { CartDrawer } from './components/CartDrawer';
 import { SearchModal } from './components/SearchModal';
@@ -67,6 +67,11 @@ export default function App() {
   const handleNavigate = (page: PageView) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSelectProduct = (product: Product) => {
+    setSelectedProduct(product);
+    handleNavigate('product');
   };
 
   const handleAddToCart = (product: Product, quantity = 1, weight = '500g') => {
@@ -152,7 +157,7 @@ export default function App() {
               {/* 3. Discover Our Treasures (اكتشف كنوزنا) */}
               <DiscoverTreasures
                 products={PRODUCTS}
-                onSelectProduct={(p) => setSelectedProduct(p)}
+                onSelectProduct={handleSelectProduct}
                 onAddToCart={(p) => handleAddToCart(p, 1, p.weight)}
               />
 
@@ -191,10 +196,30 @@ export default function App() {
               transition={{ duration: 0.28, ease: 'easeOut' }}
             >
               <ProductsPage
-                onSelectProduct={(p) => setSelectedProduct(p)}
+                onSelectProduct={handleSelectProduct}
                 onAddToCart={(p) => handleAddToCart(p, 1, p.weight)}
                 onOpenArticle={(art) => setSelectedArticle(art)}
                 onVerifyProduct={() => handleNavigate('verify')}
+              />
+            </motion.div>
+          )}
+
+          {currentPage === 'product' && selectedProduct && (
+            <motion.div
+              key={`product-${selectedProduct.id}`}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.28, ease: 'easeOut' }}
+            >
+              <ProductDetailPage
+                product={selectedProduct}
+                onBack={() => handleNavigate('products')}
+                onAddToCart={handleAddToCart}
+                onVerifyBatch={(code) => {
+                  const batch = VERIFICATION_BATCHES[code] || VERIFICATION_BATCHES['KZ-LUX-500'];
+                  handleOpenVerifyWithBatch(batch);
+                }}
               />
             </motion.div>
           )}
@@ -249,17 +274,6 @@ export default function App() {
       />
 
       {/* Modals and Drawers */}
-      <ProductDetailModal
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-        onAddToCart={handleAddToCart}
-        onVerifyBatch={(code) => {
-          const batch = VERIFICATION_BATCHES[code] || VERIFICATION_BATCHES['KZ-LUX-500'];
-          setSelectedProduct(null);
-          handleOpenVerifyWithBatch(batch);
-        }}
-      />
-
       <VerificationModal
         isOpen={isVerifyModalOpen}
         onClose={() => setIsVerifyModalOpen(false)}
@@ -278,7 +292,7 @@ export default function App() {
       <SearchModal
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
-        onSelectProduct={(p) => setSelectedProduct(p)}
+        onSelectProduct={handleSelectProduct}
       />
 
       <AccountModal

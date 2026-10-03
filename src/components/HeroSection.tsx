@@ -48,10 +48,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onDiscover, onVerify }
         >
           
           {/* Headline in Pyramid Shape (Short -> Medium -> Long) */}
-          <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-[1.25] tracking-tight text-[#0C261B] mb-4 flex flex-col items-center">
+          <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-bold leading-[1.7] text-[#0C261B] mb-4 flex flex-col items-center">
             <span className="block text-[#0C261B]">عسل نقي.</span>
-            <span className="block text-[#0C261B] mt-0.5">عافية حقيقية.</span>
-            <span className="block text-[#D19A44] mt-1 font-bold whitespace-nowrap">
+            <span className="block text-[#0C261B]">عافية حقيقية.</span>
+            <span className="block text-[#D19A44] font-bold whitespace-nowrap">
               جودة يمكن التحقق منها.
             </span>
           </h1>

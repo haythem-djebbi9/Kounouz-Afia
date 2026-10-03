@@ -40,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Force LTR order so Logo is on the Left, Nav is in Center, and Actions are on the Right */}
-        <div dir="ltr" className="flex items-center justify-between h-24 sm:h-28">
+        <div dir="ltr" className="flex items-center justify-between h-[88px] sm:h-28 lg:h-32">
           
           {/* Brand Logo on the LEFT (Enlarged & Prominent) */}
           <div className="flex-shrink-0 flex items-center pr-2">
@@ -50,7 +50,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Navigation Links in the CENTER */}
           <nav id="desktop-navigation" dir="ltr" className="hidden md:flex items-center gap-6 lg:gap-8 xl:gap-10">
             {navItems.map((item) => {
-              const isActive = currentPage === item.page;
+              const isActive = currentPage === item.page || (item.page === 'products' && currentPage === 'product');
               return (
                 <button
                   key={item.page}
@@ -145,7 +145,7 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div id="mobile-navigation" className="md:hidden border-t border-[#EAE1D2] bg-[#F6F1EB] px-4 pt-3 pb-6 space-y-2">
           {navItems.map((item) => {
-            const isActive = currentPage === item.page;
+            const isActive = currentPage === item.page || (item.page === 'products' && currentPage === 'product');
             return (
               <button
                 key={item.page}

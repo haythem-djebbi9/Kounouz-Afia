@@ -1,6 +1,6 @@
 import React from 'react';
 import { Article } from '../types';
-import { X, Calendar, Clock, Share2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { X, Calendar, Clock, Share2, Sparkles, CheckCircle2, AlertTriangle } from 'lucide-react';
 
 interface ArticleModalProps {
   article: Article | null;
@@ -59,7 +59,7 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose }) 
             {article.snippet}
           </p>
 
-          <div className="space-y-3 text-xs sm:text-sm text-[#576B64] leading-relaxed pt-2">
+          <div className="space-y-3 text-sm text-[#3F5249] leading-relaxed pt-2">
             <p>
               يُعتبر العسل الطبيعي من أقدم وأعظم المعجزات الغذائية والعلاجية التي عرفتها البشرية. في كنوز العافية، نحرص على جني العسل بأحدث الطرق العلمية التي تضمن بقاء الإنزيمات النشطة والأحماض الأمينية دون أي معالجة حرارية تضر بجودته.
             </p>
@@ -69,18 +69,24 @@ export const ArticleModal: React.FC<ArticleModalProps> = ({ article, onClose }) 
                 <Sparkles className="w-4 h-4 text-[#D49B37]" />
                 أهم النصائح للاستفادة القصوى:
               </h4>
-              <ul className="space-y-1.5 text-xs text-[#576B64]">
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#1E6B56] shrink-0" />
+              <ul className="space-y-2 text-sm text-[#2F4A40] font-medium">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 mt-0.5 text-[#1E6B56] shrink-0" />
                   تناول ملعقة صباحاً على الريق مذابة في ماء فاتر لسرعة الامتصاص.
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#1E6B56] shrink-0" />
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 mt-0.5 text-[#1E6B56] shrink-0" />
                   استخدم الملاعق الخشبية أو الخزفية وتجنب الملاعق المعدنية لحفظ الخواص الإنزيمية.
                 </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#1E6B56] shrink-0" />
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 mt-0.5 text-[#1E6B56] shrink-0" />
                   احفظ العسل في درجة حرارة الغرفة (20-25 مئوية) بعيداً عن أشعة الشمس المباشرة.
+                </li>
+                <li className="flex items-start gap-2 text-[#7A4B0E]">
+                  <AlertTriangle className="w-4 h-4 mt-0.5 text-[#C68A28] shrink-0" />
+                  <span>
+                    <strong>تنبيه:</strong> لا يُعطى العسل للأطفال دون سنة من العمر، ويوصي بعض الأطباء بتأخيره إلى ما بعد سنتين. استشر طبيب الأطفال دائماً.
+                  </span>
                 </li>
               </ul>
             </div>

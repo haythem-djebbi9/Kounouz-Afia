@@ -65,4 +65,4 @@ export interface CartItem {
   selectedWeight: string;
 }
 
-export type PageView = 'home' | 'products' | 'story' | 'verify' | 'contact';
+export type PageView = 'home' | 'products' | 'product' | 'story' | 'verify' | 'contact';

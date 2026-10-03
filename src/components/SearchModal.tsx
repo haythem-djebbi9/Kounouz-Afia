@@ -9,6 +9,21 @@ interface SearchModalProps {
   onSelectProduct: (product: Product) => void;
 }
 
+// Arabic-friendly matching: ignores diacritics, hamza/alef and ya/ta-marbuta variants,
+// and the "ال" prefix so that "سدر" finds "السدر" and "عسل سدر" finds "عسل السدر الفاخر".
+function normalize(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[ً-ٰٟـ]/g, '')
+    .replace(/[أإآٱ]/g, 'ا')
+    .replace(/ى/g, 'ي')
+    .replace(/ة/g, 'ه')
+    .split(/\s+/)
+    .map((w) => (w.length > 3 && w.startsWith('ال') ? w.slice(2) : w))
+    .join(' ')
+    .trim();
+}
+
 export const SearchModal: React.FC<SearchModalProps> = ({
   isOpen,
   onClose,
@@ -18,17 +33,17 @@ export const SearchModal: React.FC<SearchModalProps> = ({
 
   if (!isOpen) return null;
 
-  const results = query.trim()
-    ? PRODUCTS.filter(
-        (p) =>
-          p.name.includes(query) ||
-          p.subtitle.includes(query) ||
-          p.description.includes(query) ||
-          p.categoryLabel.includes(query)
-      )
+  const tokens = normalize(query).split(' ').filter(Boolean);
+  const results = tokens.length
+    ? PRODUCTS.filter((p) => {
+        const haystack = normalize(
+          [p.name, p.subtitle, p.description, p.categoryLabel, p.batchCode, p.origin].join(' ')
+        );
+        return tokens.every((t) => haystack.includes(t));
+      })
     : PRODUCTS.slice(0, 4);
 
-  const quickTags = ['عسل سدر', 'غذاء ملكات', 'أعواد عسل', 'عسل طبيعي فاخر', 'بروبوليس'];
+  const quickTags = ['عسل سدر', 'غذاء ملكات', 'أعواد العافية', 'عسل جبلي', 'بروبوليس'];
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-16 sm:pt-24 bg-[#0C261B]/75 backdrop-blur-sm animate-fadeIn">
